@@ -1,6 +1,7 @@
 from selenium import webdriver
+from selenium.webdriver.support.ui import Select
 
-WORDS = ['river' 'water', 'ocean', 'liquid', 'stream', 'lake', 'wave']
+WORDS = ['river' 'water', 'ocean', 'liquid', 'stream', 'lake', 'wave', 'pool']
 
 driverPath = './drivers/chromedriver_win32/chromedriver.exe'
 url = 'https://www.behindthename.com/'
@@ -11,6 +12,13 @@ driver.get(url)
 countryTable = driver.find_elements_by_class_name('usagelinks')[0]
 englishNamesLink = countryTable.find_elements_by_css_selector("*")[0].find_elements_by_css_selector("*")[0]
 englishNamesLink.click()
+
+genderSelector = driver.find_elements_by_class_name('nb-quickselect')[0]
+select = Select(genderSelector)
+
+# select by visible text
+select.select_by_visible_text('Masculine')
+
 
 outputFile = open('./output.html', 'w', encoding="utf-8")
 
