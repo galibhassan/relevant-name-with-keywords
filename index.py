@@ -19,13 +19,12 @@ timeout = 3
 countryTable = driver.find_elements_by_class_name('usagelinks')[0]
 englishNamesLink = countryTable.find_elements_by_css_selector("*")[0].find_elements_by_css_selector("*")[0]
 englishNamesLink.click()
-""" 
+
 genderSelector = driver.find_elements_by_class_name('nb-quickselect')[0]
 select = Select(genderSelector)
 
 # select by visible text
 select.select_by_visible_text('Masculine')
- """
 
 outputFile = open('./index.html', 'w', encoding="utf-8")
 outputFile.write('''
