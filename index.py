@@ -61,7 +61,7 @@ outputFile.write('''
 			font-size: 1rem;
 			font-weight: bold;
 			margin: 10px;
-			color: rgb(22, 118, 196)
+			color: rgb(37, 158, 138)
 		}
 
 		.fem {
